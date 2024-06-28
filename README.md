@@ -1,2 +1,2 @@
-# terraform-iac-lab
-terraform-iac-lab
+# terraform-iaac-lab
+terraform-iaac-lab
