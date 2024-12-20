@@ -4,7 +4,7 @@ module "aws-s3-bucket" {
 
   for_each = var.AWS_S3_BUCKETS
 
-  bucket = each.key
-
-  website = each.value.website
+  bucket    = each.key
+  cors_rule = each.value.cors_rule
+  website   = each.value.website
 }

@@ -6,6 +6,7 @@ variable "AWS_REGION" {
 variable "AWS_S3_BUCKETS" {
   description = "List of S3 Buckets"
   type = map(object({
-    website = map(string)
+    cors_rule = any
+    website   = map(string)
   }))
 }
