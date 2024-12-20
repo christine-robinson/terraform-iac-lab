@@ -18,6 +18,9 @@ crash.log
 *.tfvars
 *.tfvars.json
 
+!envs/*.tfvars
+!envs/*.tfvars.json
+
 # CLI Configuration Files
 .terraformrc
 terraform.rc

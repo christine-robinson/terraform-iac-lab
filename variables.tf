@@ -1,17 +1,11 @@
-variable "PROJECT_NAME" {
-  type        = string
-  default     = "terraform-iac-lab"
-  description = "Project Name"
-}
-
-variable "ENVIRONMENT" {
-  type        = string
-  default     = "dev"
-  description = "Environment"
-}
-
-variable "AWS_DEFAULT_REGION" {
-  type        = string
+variable "AWS_REGION" {
+  description = "AWS Region"
   default     = "ap-south-1"
-  description = "AWS Default Region"
+}
+
+variable "AWS_S3_BUCKETS" {
+  description = "List of S3 Buckets"
+  type = map(object({
+    website = map(string)
+  }))
 }
