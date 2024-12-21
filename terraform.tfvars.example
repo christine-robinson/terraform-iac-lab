@@ -1,0 +1,30 @@
+AWS_S3_BUCKETS = {
+  "tf-iac-test-bucket-1" = {
+    create_bucket            = false
+    acl                      = null
+    control_object_ownership = false
+    object_ownership         = "BucketOwnerEnforced"
+    cors_rule                = []
+    versioning               = {}
+    website = {
+      index_document = "index.html"
+    }
+  },
+  "tf-iac-test-bucket-2" = {
+    create_bucket            = false
+    acl                      = null
+    control_object_ownership = false
+    object_ownership         = "BucketOwnerEnforced"
+    cors_rule = [
+      {
+        allowed_headers = ["*"]
+        allowed_methods = ["GET", "POST", "PUT"]
+        allowed_origins = ["*"]
+        expose_headers  = ["ETag"]
+        max_age_seconds = 3000
+      }
+    ]
+    versioning = {}
+    website    = {}
+  }
+}
