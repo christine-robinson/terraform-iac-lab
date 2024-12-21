@@ -1,30 +1,22 @@
 AWS_S3_BUCKETS = {
   "tf-iac-test-bucket-1" = {
-    create_bucket            = false
-    acl                      = null
-    control_object_ownership = false
-    object_ownership         = "BucketOwnerEnforced"
-    cors_rule                = []
-    versioning               = {}
+    create_bucket = true
+
+    block_public_acls       = false
+    block_public_policy     = false
+    ignore_public_acls      = false
+    restrict_public_buckets = false
+
+    acl                      = "private"
+    control_object_ownership = true
+    object_ownership         = "ObjectWriter"
+
+    versioning = {}
+
     website = {
       index_document = "index.html"
     }
-  },
-  "tf-iac-test-bucket-2" = {
-    create_bucket            = false
-    acl                      = null
-    control_object_ownership = false
-    object_ownership         = "BucketOwnerEnforced"
-    cors_rule = [
-      {
-        allowed_headers = ["*"]
-        allowed_methods = ["GET", "POST", "PUT"]
-        allowed_origins = ["*"]
-        expose_headers  = ["ETag"]
-        max_age_seconds = 3000
-      }
-    ]
-    versioning = {}
-    website    = {}
+
+    cors_rule = []
   }
 }
